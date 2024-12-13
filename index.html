@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator-Simple</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class = "container">
+        <div class="output_fields">
+            <input type="text" id="enterfield" readonly>
+        </div>
+            <div class="buttons" id="buttons">
+            <button style="background: #fff; color: black;" onclick="EnterAction('C')">AC</button>
+            <button style="background: rgb(94, 93, 93);">( )</button>
+            <button style="background: rgb(94, 93, 93);" onclick="EnterOperator('%')">%</button>
+            <button style="background: rgb(94, 93, 93);" onclick="EnterOperator('/')" >/</button>
+            <button onclick="EnterNum(9)">9</button>
+            <button onclick="EnterNum(8)">8</button>
+            <button onclick="EnterNum(7)">7</button>
+            <button style="background: rgb(94, 93, 93);" onclick="EnterOperator('*')">x</button>
+            <button onclick="EnterNum(6)">6</button>
+            <button onclick="EnterNum(5)">5</button>
+            <button onclick="EnterNum(4)">4</button>
+            <button style="background: rgb(94, 93, 93);" onclick="EnterOperator('-')">-</button>
+            <button onclick="EnterNum(3)">3</button>
+            <button onclick="EnterNum(2)">2</button>
+            <button onclick="EnterNum(1)">1</button>
+            <button style="background: rgb(94, 93, 93);" onclick="EnterOperator('+')">+</button>
+            <button onclick="EnterNum(0)">0</button>
+            <button onclick="EnterNum('.')">.</button>
+            <button onclick="EnterAction('D')">DEL</button>
+            <button style="background: #fff; color: black;"  onclick="EnterOperator('=')">=</button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="script.js"></script>
