@@ -50,4 +50,21 @@ body{
     min-width: 10px;
     min-height: 10px;
     border: none;
-}   
+    transition: 0.5s;
+}  
+.buttons .buttonType1{
+    background: #fff; 
+    color: black;
+    transition: 0.5s;
+}
+.buttons .buttonType2{
+    background-color: rgb(94, 93, 93);
+    transition: 0.5s;
+}
+
+.buttons button:hover{
+    border-radius: 30px;
+}
+.buttons .buttonType2:active , .buttonType0:active{
+    background-color: rgb(99, 98, 98);
+}
