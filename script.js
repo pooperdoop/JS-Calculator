@@ -1,7 +1,9 @@
 var calculation;
+var periodCheck = false;
+var ParCheck = false;
 function EnterNum(n){
 
-    if(document.getElementById('enterfield').value == "undefined"){
+    if(document.getElementById('enterfield').value == "undefined" || document.getElementById('enterfield').value == "Format Error"){
         document.getElementById('enterfield').value ="";
     }
 
@@ -26,8 +28,21 @@ function EnterNum(n){
             document.getElementById('enterfield').value +='8'; break;
         case 9:
             document.getElementById('enterfield').value +='9'; break;
+        case 'P':
+            if(ParCheck == false){
+                document.getElementById('enterfield').value +='('; 
+                ParCheck = true;
+            } else{
+                document.getElementById('enterfield').value +=')'; 
+                ParCheck = false;
+            }
+            break;
         case '.':
-             document.getElementById('enterfield').value +='.'; break;
+            if(periodCheck == false){
+             document.getElementById('enterfield').value +='.'; 
+             periodCheck = true;
+            } 
+            break;
     }
     calculation = document.getElementById('enterfield').value ;
 }
@@ -50,10 +65,24 @@ function EnterAction(n){
 }
 
 function EnterOperator(n){
+    if(document.getElementById('enterfield').value == "undefined" || document.getElementById('enterfield').value == "Format Error"){
+        document.getElementById('enterfield').value ="";
+    }   
     if(n != "="){
-        document.getElementById('enterfield').value += n;
+        var lastChar = document.getElementById("enterfield").value.slice(-1);
+        if(lastChar == "+" || lastChar == "-" || lastChar == "/" || lastChar =="*" || lastChar =="%"){
+            return; 
+        }else{
+            document.getElementById('enterfield').value += n;
+            periodCheck = false;
+        }
     }
     else{
-        document.getElementById('enterfield').value = eval(calculation)
+        try{
+        document.getElementById('enterfield').value = eval(calculation);
+        }
+        catch(e){
+            document.getElementById('enterfield').value = "Format Error";
+        }
     }
 }
