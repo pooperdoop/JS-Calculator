@@ -6,69 +6,41 @@ var parCount = 0;
 
 
 
-function EnterNum(n){
+function EnterNum(input) {
+    const enterField = document.getElementById('enterfield');
+    
+    // Helper function to append a value to the input field
+    const appendToField = (value) => {
+        enterField.value += value;
+    };
+
     CheckForPar();
     Cleanup();
 
-    switch (n){
-        case 0:
-            document.getElementById('enterfield').value += '0'; 
-            ParCheck = true; 
-            break;
-        case 1:
-            document.getElementById('enterfield').value += '1'; 
-            ParCheck = true; 
-            break;
-        case 2:
-            document.getElementById('enterfield').value += '2'; 
-            ParCheck = true; 
-            break;
-        case 3:
-            document.getElementById('enterfield').value += '3'; 
-            ParCheck = true; 
-            break;
-        case 4:
-            document.getElementById('enterfield').value +='4'; 
-            ParCheck = true; 
-            break;
-        case 5:
-            document.getElementById('enterfield').value +='5'; 
-            ParCheck = true; 
-            break;
-        case 6:
-            document.getElementById('enterfield').value +='6'; 
-            ParCheck = true; 
-            break;
-        case 7:
-            document.getElementById('enterfield').value +='7'; 
-            ParCheck = true; 
-            break;
-        case 8:
-            document.getElementById('enterfield').value +='8'; 
-            ParCheck = true; 
-            break;
-        case 9:
-            document.getElementById('enterfield').value +='9'; 
-            ParCheck = true; 
-            break;
-        case 'P':
-            if(ParCheck == false){
-                document.getElementById('enterfield').value +='('; 
-                parCount++;
-            } else{
-                document.getElementById('enterfield').value +=')'; 
-                parCount--;
-            }
-            break;
-        case '.':
-            if(periodCheck == false){
-             document.getElementById('enterfield').value +='.'; 
-             periodCheck = true;
-            } 
-            ParCheck = false; 
-            break;
+    if (typeof input === 'number' && input >= 0 && input <= 9) {
+        // Handle numbers
+        appendToField(input);
+        ParCheck = true;
+    } else if (input === 'P') {
+        // Handle parentheses
+        if (!ParCheck) {
+            appendToField('(');
+            parCount++;
+        } else {
+            appendToField(')');
+            parCount--;
+        }
+    } else if (input === '.') {
+        // Handle decimal point
+        if (!periodCheck) {
+            appendToField('.');
+            periodCheck = true;
+        }
+        ParCheck = false;
     }
-    calculation = document.getElementById('enterfield').value ;
+
+    // Update calculation value
+    calculation = enterField.value;
 }
 
 function EnterAction(n){
