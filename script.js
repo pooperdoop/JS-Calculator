@@ -58,6 +58,7 @@ function EnterAction(n){
             break;
         case 'C':
             document.getElementById('enterfield').value = '';
+            ParCheck = false;
             calculation = document.getElementById('enterfield').value
             break;
 
