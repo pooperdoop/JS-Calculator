@@ -87,6 +87,7 @@ function EnterAction(n){
 
 function EnterOperator(n){
     checkforCalculation();
+    Cleanup();  
     let enterfield = document.getElementById('enterfield').value;
     if(n != "="){
         if(enterfield.length == 0 && n != "-" || enterfield == "-"){
