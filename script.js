@@ -78,7 +78,7 @@ function EnterOperator(n){
             // returns if input is any operator except - or if inputfield only consists of a -
             return;
         } else{
-            let lastChar = enterfield.value.slice(-1);
+            let lastChar = enterfield.slice(-1);
             // getst the last character
             if(lastChar == "+" || lastChar == "-" || lastChar == "/" || lastChar =="*" || lastChar =="%"){
 
