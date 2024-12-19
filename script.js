@@ -126,7 +126,6 @@ function EnterOperator(n){
             catch(e){
                 changeFieldValue("Format Error");
             }
-            periodCheck = false;
             ParCheck = false;
             parCount = 0;
         }
@@ -156,6 +155,11 @@ function appendToField(value){
 function changeFieldValue(value){
     const enterField = document.getElementById('enterfield');
     enterField.value = value;
+    if(enterfield.value.includes('.')){
+        periodCheck = true;
+    }else{
+        periodCheck =false;
+    }
 }
 
 function Cleanup(){
