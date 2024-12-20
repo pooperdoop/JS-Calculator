@@ -36,8 +36,8 @@ body{
 
 .additional_buttons {
     height: 6%;
+    transition: all 1s;
     display: block;
-    transition: 1s;
     margin-top: 2%;
 }
 .additional_buttons .upperDiv{
@@ -172,7 +172,8 @@ body{
     opacity: 1;
 }
 .additional_buttons:has(.hiddenCheckbox:checked){
-    height: auto;
+    height: 15%;
+    
 }
 .container:has(.hiddenCheckbox:checked)>.buttons{
     height: 60%;
@@ -180,7 +181,12 @@ body{
 
 
 @media(max-width: 1400px){
-    .container, .buttons, .lowerDiv, .middleDiv, .upperDiv, .output_fields{
+    .container, 
+    .buttons, 
+    .lowerDiv, 
+    .middleDiv, 
+    .upperDiv, 
+    .output_fields{
         width: 100%;
     }
     .buttons button{
