@@ -122,6 +122,7 @@ body{
 }
 
 .buttons{
+    position: relative;
     display: grid;
     grid-template-columns:repeat(4, 1fr);
     background-color: rgb(34, 34, 34);
@@ -129,6 +130,7 @@ body{
     justify-items: center;
     height: 70%;
     transition: all 1s;
+    bottom: 0px;
 
 }
 .buttons button{
@@ -145,6 +147,7 @@ body{
     min-height: 10px;
     border: none;
     transition: 0.5s;
+
 }  
 .buttons .buttonType1{
     background: #fff; 
@@ -172,5 +175,11 @@ body{
     height: 13%;
 }
 .container:has(.hiddenCheckbox:checked) > .buttons{
-    height: 50%;
+    height: 40%;
+}
+
+@media only screen and (max-width: 1024px){
+    .container, .buttons, .lowerDiv, .middleDiv, .upperDiv, .output_fields{
+        width: 100%;
+    }
 }
