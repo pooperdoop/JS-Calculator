@@ -96,7 +96,7 @@ function EnterOperator(n){
         } else{
             let lastChar = enterfield.slice(-1);
             // getst the last character
-            if(lastChar == "+" || lastChar == "-" || lastChar == "÷" || lastChar =="x" || lastChar =="%"){
+            if(lastChar == "+" || lastChar == "-" || lastChar == "÷" || lastChar =="×" || lastChar =="%"){
 
                 let del = enterfield.substring(0, enterfield.length-1); 
                 changeFieldValue(del +n);
@@ -119,7 +119,7 @@ function EnterOperator(n){
          }else{
             try{
                 calculation = calculation.replaceAll("÷", "/")
-                calculation = calculation.replaceAll("x", "*")
+                calculation = calculation.replaceAll("×", "*")
                 //Replaces characters with equation friendly operators
                 changeFieldValue(eval(calculation));
             }
