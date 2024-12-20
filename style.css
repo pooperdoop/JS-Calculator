@@ -8,6 +8,7 @@ body{
     justify-content: center;
     align-items: center;    
     background-color: rgb(34, 34, 34);
+    interpolate-size: allow-keywords;
 }
 
 .container{   
@@ -35,10 +36,12 @@ body{
 }
 
 .additional_buttons {
+    interpolate-size: allow-keywords;
     height: 6%;
-    transition: all 1s;
+    transition: height 1s ease;
     display: block;
     margin-top: 2%;
+    
 }
 .additional_buttons .upperDiv{
     width: 100%;
@@ -129,8 +132,8 @@ body{
     justify-content: space-between;  
     justify-items: center;
     height: 70%;
-    transition: all 1s;
     bottom: auto;
+    transition: 1s;
 
 }
 .buttons button{
@@ -173,10 +176,11 @@ body{
 }
 .additional_buttons:has(.hiddenCheckbox:checked){
     height: auto;
+
     
 }
 .container:has(.hiddenCheckbox:checked)>.buttons{
-    height: 60%;
+    height: 59%;
 }
 
 
