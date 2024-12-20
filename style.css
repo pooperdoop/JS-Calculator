@@ -122,15 +122,15 @@ body{
 }
 
 .buttons{
-    position: relative;
     display: grid;
+    position: relative;
     grid-template-columns:repeat(4, 1fr);
     background-color: rgb(34, 34, 34);
     justify-content: space-between;  
     justify-items: center;
-    height: auto;
+    height: 70%;
     transition: all 1s;
-    bottom: 0px;
+    bottom: auto;
 
 }
 .buttons button{
@@ -172,15 +172,18 @@ body{
     opacity: 1;
 }
 .additional_buttons:has(.hiddenCheckbox:checked){
-    height: 13%;
+    height: auto;
+}
+.container:has(.hiddenCheckbox:checked)>.buttons{
+    height: 60%;
 }
 
 
-@media(max-width: 1024px){
+@media(max-width: 1400px){
     .container, .buttons, .lowerDiv, .middleDiv, .upperDiv, .output_fields{
         width: 100%;
     }
     .buttons button{
-        width: auto;
+        width: 100%;
     }
 }
