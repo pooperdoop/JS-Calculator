@@ -8,11 +8,10 @@ body{
     justify-content: center;
     align-items: center;    
     background-color: rgb(34, 34, 34);
-    height: 100vh;
 }
 
 .container{   
-    height: 100vh;
+    height: 100dvh;
     position: relative;
     border: 5px solid rgb(14, 13, 13);
     border-radius: 10px;
