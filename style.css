@@ -16,7 +16,7 @@ body{
     border: 5px solid rgb(14, 13, 13);
     border-radius: 10px;
     width: 30%;
-    display: inline;
+    display: block;
     justify-content: center;
 }
 .output_fields{
@@ -128,7 +128,7 @@ body{
     background-color: rgb(34, 34, 34);
     justify-content: space-between;  
     justify-items: center;
-    height: 70%;
+    height: auto;
     transition: all 1s;
     bottom: 0px;
 
@@ -174,12 +174,13 @@ body{
 .additional_buttons:has(.hiddenCheckbox:checked){
     height: 13%;
 }
-.container:has(.hiddenCheckbox:checked) > .buttons{
-    height: 40%;
-}
 
-@media only screen and (max-width: 1024px){
+
+@media(max-width: 1024px){
     .container, .buttons, .lowerDiv, .middleDiv, .upperDiv, .output_fields{
         width: 100%;
+    }
+    .buttons button{
+        width: auto;
     }
 }
