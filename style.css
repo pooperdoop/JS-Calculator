@@ -20,6 +20,9 @@ body{
     display: inline;
     justify-content: center;
 }
+.output_fields{
+    height: 20%;
+}
 .output_fields input{
     text-align: right;
     color: white;
@@ -27,25 +30,55 @@ body{
     margin: auto;
     width: 100%;
     background-color: rgb(68, 68, 68);
-    height: 180px;
+    height: 100%;
     border-radius: 30px;
     border: none;
 
 }
 
 .additional_buttons {
+    height: 6%;
+    display: block;
+    transition: 1s;
+}
+.additional_buttons .upperDiv{
     width: 100%;
-    height: 60px;
     display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: rgb(34, 34, 34);
+    justify-content: space-between;  
+    justify-items: center;
+}
+.additional_buttons .middleDiv,  .lowerDiv{
+    width: 100%;
+    display: inline-flex;
+    background-color: rgb(34, 34, 34);
+    justify-content: space-between;  
+    justify-items: center;
+    transition: all 0.5s ease;
+    opacity: 0;
 }
 .additional_buttons button{
-margin: 15px;
+margin: 5px auto;
 }
 .additional_buttons .buttonType3 {
-    width: 15%;
-    height: 85%;
+    position: relative;
+    display: inline;
+    top: 0px;
+    width: 90px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgb(34, 34, 34);
+    border: none;
+    transition: 0.5s;
+    color: white;
+    font-size: 30px;
+}
+.additional_buttons .buttonType5 {
+    position: relative;
+    display: inline;
+    top: 0px;
+    width: 90px;
+    height: 50px;
     border-radius: 25px;
     background-color: rgb(34, 34, 34);
     border: none;
@@ -55,8 +88,9 @@ margin: 15px;
 }
 .additional_buttons .buttonType4 {
     margin-right: 20px;
-    width: 5.3%;
-    height: 50%;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
     background-color: rgb(44, 44, 44);
     border: none;
     border-radius: 25px;
@@ -65,17 +99,25 @@ margin: 15px;
     font-size: 17px;
     color: white;
 }
+.additional_buttons .buttonType6{
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: rgb(34, 34, 34);
+    border-radius: 25px;
+    transition: 0.5s;
+    text-align: center;
+    font-size: 17px;
+    color: white;
+}
 
-.buttonType3:hover, .buttonType4:hover{
+.buttonType3:hover, .buttonType4:hover, .buttonType5:hover{
     background-color: rgb(68, 68, 68);
 }
 .buttonType4:hover{
     border-radius: 10px;
-}
-
-.additional_buttons:has(.hiddenCheckbox:checked){
-    background-color: rebeccapurple;
-   
 }
 
 .buttons{
@@ -84,17 +126,20 @@ margin: 15px;
     background-color: rgb(34, 34, 34);
     justify-content: space-between;  
     justify-items: center;
+    height: 70%;
+    transition: all 1s;
 
 }
 .buttons button{
+    z-index: 2;
     margin-top: 10px;
     align-self: center;
     border-radius: 50px;
     font-size: xx-large;
     background-color: rgb(44, 44, 44);
     color: white;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 80%;
     min-width: 10px;
     min-height: 10px;
     border: none;
@@ -113,6 +158,18 @@ margin: 15px;
 .buttons button:hover{
     border-radius: 30px;
 }
-.buttons .buttonType2:active , .buttonType0:active{
+.buttons .buttonType2:active, 
+.buttonType0:active, .buttonType3:active, 
+.buttonType5:active{
     background-color: rgb(99, 98, 98);
+}
+.additional_buttons:has(.hiddenCheckbox:checked) >.lowerDiv, 
+.additional_buttons:has(.hiddenCheckbox:checked) > .middleDiv {
+    opacity: 1;
+}
+.additional_buttons:has(.hiddenCheckbox:checked){
+    height: 18%;
+}
+.container:has(.hiddenCheckbox:checked) > .buttons{
+    height: 60%;
 }
