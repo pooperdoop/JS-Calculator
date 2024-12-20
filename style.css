@@ -172,7 +172,7 @@ body{
     opacity: 1;
 }
 .additional_buttons:has(.hiddenCheckbox:checked){
-    height: 15%;
+    height: auto;
     
 }
 .container:has(.hiddenCheckbox:checked)>.buttons{
