@@ -172,5 +172,5 @@ body{
     height: 13%;
 }
 .container:has(.hiddenCheckbox:checked) > .buttons{
-    height: 63%;
+    height: 50%;
 }
