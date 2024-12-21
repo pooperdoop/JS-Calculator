@@ -76,7 +76,6 @@ function EnterAction(n){
             del = calculationfield.substring(0, calculationfield.length-1); 
             document.getElementById('enterfield').value = del;
             calculation = document.getElementById('enterfield').value;
-            alert(calculation)
 
             if(calculation.slice(-1) == "("){
 
@@ -90,7 +89,9 @@ function EnterAction(n){
             periodCheck = false;
             parCheck = false;
             parCount = 0;
-            currentAns = [];
+            currentEquation = "";
+            currentEquationAnswer  = "";
+            currentAns = "";
             break;
             // effectively, a reset to the inputs and values of vars
 
@@ -210,7 +211,6 @@ function SquareRootFunction(){
     let sqrRtEquation = "(";
 
     while(parenthesesCount != 0){
-        console.log(parenthesesCount)
 
         let currentChar = currentEquationAnswer.charAt(startChar);
         sqrRtEquation += currentChar;
